@@ -8,7 +8,9 @@
       "path": "@commitlint/cz-commitlint"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@rodbe/fn-utils": "^1.5.0"
+  },
   "description": "Typed and customizable wrapper for the GitHub API",
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
