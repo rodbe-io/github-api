@@ -2,7 +2,7 @@ import { to } from '@rodbe/fn-utils';
 
 import type { Organization } from './user.types';
 
-interface GetOrgsProps<T> {
+export interface GetOrgsProps<T> {
   mapper?: (org: Organization) => T;
   token: string;
 }
