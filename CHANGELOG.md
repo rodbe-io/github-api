@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/rodbe-io/github-api/compare/v1.1.0...v1.1.1) (2025-02-11)
+
+
+### Bug Fixes
+
+* export type for getOrgs ([9a73b5d](https://github.com/rodbe-io/github-api/commit/9a73b5de9fa74ccbed60a91a44c64d3310c1a5db))
+
 ## [1.1.0](https://github.com/rodbe-io/github-api/compare/v1.0.0...v1.1.0) (2025-02-11)
 
 
