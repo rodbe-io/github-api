@@ -1,6 +1,7 @@
 import { to } from '@rodbe/fn-utils';
 
 import type { Organization } from './user.types';
+import { getHeaders } from '@/utils';
 
 export interface GetOrgsProps<T> {
   mapper?: (org: Organization) => T;
@@ -8,11 +9,6 @@ export interface GetOrgsProps<T> {
 }
 
 export const getOrgs = async <T = Organization>({ mapper, token }: GetOrgsProps<T>) => {
-  const headers = {
-    Accept: 'application/vnd.github.v3+json',
-    Authorization: `Bearer ${token}`,
-  };
-
   let organizations: typeof mapper extends undefined ? Array<Organization> : Array<T> = [];
   let page = 1;
   let hasNextPage = true;
@@ -22,7 +18,7 @@ export const getOrgs = async <T = Organization>({ mapper, token }: GetOrgsProps<
     const [error, response] = await to<Array<Organization>>(
       // NOTE: https://docs.github.com/en/rest/orgs/orgs?apiVersion=2022-11-28#list-organizations-for-the-authenticated-user
       fetch(`https://api.github.com/user/orgs?page=${String(page)}&per_page=100`, {
-        headers,
+        headers: getHeaders(token),
         method: 'GET',
       })
         .then(async r => {

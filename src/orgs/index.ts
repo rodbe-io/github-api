@@ -1,6 +1,7 @@
 import { to } from '@rodbe/fn-utils';
 
 import type { Repository } from './orgs.types';
+import { getHeaders } from '@/utils';
 
 export interface GetAllReposByOrgProps<T> {
   mapper?: (repo: Repository) => T;
@@ -9,11 +10,6 @@ export interface GetAllReposByOrgProps<T> {
 }
 
 export const getAllReposByOrg = async <T = Repository>({ mapper, org, token }: GetAllReposByOrgProps<T>) => {
-  const headers = {
-    Accept: 'application/vnd.github.v3+json',
-    Authorization: `Bearer ${token}`,
-  };
-
   let allRepos: typeof mapper extends undefined ? Array<Repository> : Array<T> = [];
   let page = 1;
   let hasNextPage = true;
@@ -22,7 +18,7 @@ export const getAllReposByOrg = async <T = Repository>({ mapper, org, token }: G
   while (hasNextPage) {
     const [error, response] = await to<Array<Repository>>(
       fetch(`https://api.github.com/orgs/${org}/repos?page=${String(page)}&per_page=100&type=all`, {
-        headers,
+        headers: getHeaders(token),
         method: 'GET',
       })
         .then(async r => {
