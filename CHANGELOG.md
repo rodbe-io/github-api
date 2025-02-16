@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/rodbe-io/github-api/compare/v1.2.0...v2.0.0) (2025-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **file restructuring:** Restructuring files and renaming all public methods
+
+### Code Refactoring
+
+* **file restructuring:** move and rename all methods ([3e04f9a](https://github.com/rodbe-io/github-api/commit/3e04f9af5f8b93c6fe03c35839284b47facd2ca0))
+
 ## [1.2.0](https://github.com/rodbe-io/github-api/compare/v1.1.1...v1.2.0) (2025-02-16)
 
 
