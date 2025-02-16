@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/rodbe-io/github-api/compare/v1.1.1...v1.2.0) (2025-02-16)
+
+
+### Features
+
+* fetch repos by user ([05923ac](https://github.com/rodbe-io/github-api/commit/05923ac2a77bb97ecba856e5bdc9581eda556bfc))
+
 ## [1.1.1](https://github.com/rodbe-io/github-api/compare/v1.1.0...v1.1.1) (2025-02-11)
 
 
