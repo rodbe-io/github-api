@@ -1,62 +1,6 @@
-interface Permissions {
-  admin: boolean;
-  maintain: boolean;
-  pull: boolean;
-  push: boolean;
-  triage: boolean;
-}
+import type { Owner, Permissions } from './sharedRepos.types';
 
-interface SecurityAndAnalysis {
-  dependabot_security_updates: DependabotSecurityUpdates;
-  secret_scanning: SecretScanning;
-  secret_scanning_non_provider_patterns: SecretScanningNonProviderPatterns;
-  secret_scanning_push_protection: SecretScanningPushProtection;
-  secret_scanning_validity_checks: SecretScanningValidityChecks;
-}
-
-interface Owner {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-  user_view_type: string;
-}
-
-interface SecretScanning {
-  status: string;
-}
-
-interface SecretScanningPushProtection {
-  status: string;
-}
-
-interface DependabotSecurityUpdates {
-  status: string;
-}
-
-interface SecretScanningNonProviderPatterns {
-  status: string;
-}
-
-interface SecretScanningValidityChecks {
-  status: string;
-}
-
-export interface Repository {
+export interface OrgRepository {
   allow_forking: boolean;
   archive_url: string;
   archived: boolean;
@@ -138,4 +82,32 @@ export interface Repository {
   watchers: number;
   watchers_count: number;
   web_commit_signoff_required: boolean;
+}
+
+interface SecurityAndAnalysis {
+  dependabot_security_updates: DependabotSecurityUpdates;
+  secret_scanning: SecretScanning;
+  secret_scanning_non_provider_patterns: SecretScanningNonProviderPatterns;
+  secret_scanning_push_protection: SecretScanningPushProtection;
+  secret_scanning_validity_checks: SecretScanningValidityChecks;
+}
+
+interface SecretScanning {
+  status: string;
+}
+
+interface SecretScanningPushProtection {
+  status: string;
+}
+
+interface DependabotSecurityUpdates {
+  status: string;
+}
+
+interface SecretScanningNonProviderPatterns {
+  status: string;
+}
+
+interface SecretScanningValidityChecks {
+  status: string;
 }
