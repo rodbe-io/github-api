@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/rodbe-io/github-api/compare/v2.0.0...v2.1.0) (2025-02-18)
+
+
+### Features
+
+* add fetch starred repos + typo imports ([fa28759](https://github.com/rodbe-io/github-api/commit/fa28759d0f3081db6422ef5276e72058aa89deb6))
+
 ## [2.0.0](https://github.com/rodbe-io/github-api/compare/v1.2.0...v2.0.0) (2025-02-16)
 
 
