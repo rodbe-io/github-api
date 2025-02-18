@@ -1,6 +1,6 @@
-import type { Owner, Permissions } from './sharedRepos.types';
+import type { License, Owner, Permissions } from './common.types';
 
-export interface OrgRepository {
+export interface UserRepository {
   allow_forking: boolean;
   archive_url: string;
   archived: boolean;
@@ -17,7 +17,7 @@ export interface OrgRepository {
   created_at: string;
   default_branch: string;
   deployments_url: string;
-  description: string;
+  description: null | string;
   disabled: boolean;
   downloads_url: string;
   events_url: string;
@@ -36,7 +36,7 @@ export interface OrgRepository {
   has_pages: boolean;
   has_projects: boolean;
   has_wiki: boolean;
-  homepage: unknown;
+  homepage: null | string;
   hooks_url: string;
   html_url: string;
   id: number;
@@ -48,10 +48,10 @@ export interface OrgRepository {
   labels_url: string;
   language: string;
   languages_url: string;
-  license: unknown;
+  license: null | License;
   merges_url: string;
   milestones_url: string;
-  mirror_url: unknown;
+  mirror_url: null | string;
   name: string;
   node_id: string;
   notifications_url: string;
@@ -63,7 +63,6 @@ export interface OrgRepository {
   pulls_url: string;
   pushed_at: string;
   releases_url: string;
-  security_and_analysis: SecurityAndAnalysis;
   size: number;
   ssh_url: string;
   stargazers_count: number;
@@ -82,32 +81,4 @@ export interface OrgRepository {
   watchers: number;
   watchers_count: number;
   web_commit_signoff_required: boolean;
-}
-
-interface SecurityAndAnalysis {
-  dependabot_security_updates: DependabotSecurityUpdates;
-  secret_scanning: SecretScanning;
-  secret_scanning_non_provider_patterns: SecretScanningNonProviderPatterns;
-  secret_scanning_push_protection: SecretScanningPushProtection;
-  secret_scanning_validity_checks: SecretScanningValidityChecks;
-}
-
-interface SecretScanning {
-  status: string;
-}
-
-interface SecretScanningPushProtection {
-  status: string;
-}
-
-interface DependabotSecurityUpdates {
-  status: string;
-}
-
-interface SecretScanningNonProviderPatterns {
-  status: string;
-}
-
-interface SecretScanningValidityChecks {
-  status: string;
 }
