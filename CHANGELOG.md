@@ -1,3 +1,15 @@
+## [2.2.0](https://github.com/rodbe-io/github-api/compare/v2.1.0...v2.2.0) (2026-06-16)
+
+### Features
+
+* export errors for organizations without permissions ([51e9f21](https://github.com/rodbe-io/github-api/commit/51e9f21932ba4d89bac555754f9195213c4e2573))
+
+### Bug Fixes
+
+* release config ([9639952](https://github.com/rodbe-io/github-api/commit/9639952cbe0c5f4dcc7592f0cb3eae74b5d15e95))
+* release with oidc ([17fe57a](https://github.com/rodbe-io/github-api/commit/17fe57a9ba6905b937ca15861bb1e5038672730a))
+* up to node v25 + update eslint rules ([cf109e8](https://github.com/rodbe-io/github-api/commit/cf109e81b39333ad394fd631ee1b80d1fc43662e))
+
 ## [2.1.0](https://github.com/rodbe-io/github-api/compare/v2.0.0...v2.1.0) (2025-02-18)
 
 

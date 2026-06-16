@@ -1,6 +1,6 @@
 {
   "name": "@rodbe/github-api",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Typed and customizable wrapper for the GitHub API",
   "keywords": [
     "front-end",
