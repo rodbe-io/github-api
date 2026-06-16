@@ -8,8 +8,12 @@ export interface GetOrgsProps<T> {
   token: string;
 }
 
-export const getOrgs = async <T = Organization>({ mapper, token }: GetOrgsProps<T>) => {
+export const getOrgs = async <T = Organization>({
+  mapper,
+  token,
+}: GetOrgsProps<T>): Promise<{ errors: Array<Error>; organizations: Array<T> }> => {
   let organizations: typeof mapper extends undefined ? Array<Organization> : Array<T> = [];
+  const errors: Array<Error> = [];
   let page = 1;
   let hasNextPage = true;
 
@@ -38,6 +42,7 @@ export const getOrgs = async <T = Organization>({ mapper, token }: GetOrgsProps<
 
     if (error) {
       console.error('Error getting organizations:', error);
+      errors.push(error);
 
       break;
     }
@@ -53,5 +58,5 @@ export const getOrgs = async <T = Organization>({ mapper, token }: GetOrgsProps<
     }
   }
 
-  return organizations;
+  return { errors, organizations };
 };
